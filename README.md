@@ -38,5 +38,6 @@ My snake concept:
 - it is visualized by showing the coordinates of snake and the berry
 - when snake is on a berry, you get a point and the berry will spawn again at a random location
 - the playable area is for both X & Y 0-20, if you go outside that you die
+- has pytests for the random berry location, the snake movement and the AI
 
 For the tests to works you have to put the game loop in comment, because the tests get stuck there.
