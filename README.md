@@ -25,3 +25,7 @@ Code:
 
 Scheme:
 ![scheme](./img/scheme.png)
+
+## Documentation
+
+This is too difficult of a task for me, I would just watch a tutorial and copy that because I don't know how to make this. So I will make what I know, it will be more like snake: the berry will spawn at random coordinates and the snake will only be a head (i will try to make the tail with a Double/ Single linked list but that will be extra), i will try to make the snake move with keyboard input and even make a simple algorithm(it will just look where the berry is and go there), this course is called Algorithms after all. I will also try to make pytests for these.
