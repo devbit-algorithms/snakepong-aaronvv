@@ -50,17 +50,17 @@ class Snake:
     
     def AI(self,Xberry,Yberry):
         
-        while not(self.getX()== Xberry and self.getY()==Yberry):
-            if self.getX()>Xberry:
-                self.Left()
+        
+        if self.getX()>Xberry:
+            self.Left()
 
-            if self.getX()<Xberry:
-                self.Right()
+        if self.getX()<Xberry:
+            self.Right()
 
-            if self.getY()>Yberry:
-                self.Up()
+        if self.getY()>Yberry:
+            self.Up()
 
-            if self.getY()<Yberry:
+        if self.getY()<Yberry:
                 self.Down()
             
 
@@ -68,28 +68,28 @@ class Snake:
 
 
 
-# OUTPUT
+# Gameloop
 
-#berry object
 myBerry= Berry()
-
-#random berry coordinates
 myBerry.randomCoordinates()
-myBerry.sayCoordinates()
-
-#snake object
 mySnake= Snake()
 
-#snake algorithm to go to berry
-mySnake.sayCoordinates()
-#mySnake.AI(myBerry.getX(), myBerry.getY())
-
-#mySnake.sayCoordinates()
-AI=True
+AI=False
 gameOver=False
 key="d"
 points=0
-print("z=up, s= down, q=left, d= right, x= quit")
+
+print("Welcome to snake concept, where snake is represented with X & Y coordinates.")
+print("Controlls:  z=up, s= down, q=left, d= right, x= quit")
+print("The playable area is between 0- 20, if you go outside, you die.")
+print("You can choose between AI ON or OFF, when AI is turned on, snake will play by itself and just go to destination.")
+x =raw_input("Please choose enter \"ON\" or \"OFF\": ")
+print(x)
+
+if x=="ON":
+    AI=True
+
+
 while gameOver==False:
     if AI==True:
         mySnake.AI(myBerry.getX(), myBerry.getY())
@@ -107,12 +107,20 @@ while gameOver==False:
     if key=="x":
         gameOver=True
 
+    #Berry detection
     if myBerry.getX()==mySnake.getX() and mySnake.getY()==myBerry.getY():
         points=points+1
         myBerry.randomCoordinates()
+
+    #Barrier detection
+    if mySnake.getX()<0 or mySnake.getX()>20 or mySnake.getY()<0 or mySnake.getY()>20:
+        gameOver=True 
     myBerry.sayCoordinates()
     mySnake.sayCoordinates()
     
     print("Points: "+str(points))
     time.sleep(1)
+
+print("GAMEOVER")
+print("SCORE: "+str(points))
 

@@ -1,6 +1,8 @@
 from main import Berry
 from main import Snake
 
+
+
 def test_BerryRandom():
     myBerry= Berry()
     myBerry.randomCoordinates()
@@ -48,12 +50,15 @@ def test_AI():
     myBerry.randomCoordinates()
     
     mySnake= Snake()
-  
-
-    mySnake.AI(myBerry.getX(), myBerry.getY())
-    xAISnake=mySnake.getX()
-    yAISnake=mySnake.getY()
+    xSnake=mySnake.getX()
+    ySnake=mySnake.getY()
     xBerry= myBerry.getX()
     yBerry= myBerry.getY()
 
-    assert xBerry==xAISnake and yBerry==yAISnake
+    mySnake.AI(myBerry.getX(), myBerry.getY())
+    
+    xAISnake=mySnake.getX()
+    yAISnake=mySnake.getY()
+    
+
+    assert abs(xBerry-xSnake)>abs(xBerry-xAISnake) or abs(yBerry-ySnake)>abs(yBerry-yAISnake)

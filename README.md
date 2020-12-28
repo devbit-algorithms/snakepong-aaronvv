@@ -28,4 +28,15 @@ Scheme:
 
 ## Documentation
 
-This is too difficult of a task for me, I would just watch a tutorial and copy that because I don't know how to make this. So I will make what I know, it will be more like snake: the berry will spawn at random coordinates and the snake will only be a head (i will try to make the tail with a Double/ Single linked list but that will be extra), i will try to make the snake move with keyboard input and even make a simple algorithm(it will just look where the berry is and go there), this course is called Algorithms after all. I will also try to make pytests for these.
+This is too difficult of a task for me, I would just watch a tutorial and copy that because I don't know how to make this. So I will make what I know, it will be more like snake: the berry will spawn at random coordinates and the snake will only be a head , i will try to make the snake move with keyboard input and even make a simple algorithm(it will just look where the berry is and go there), this course is called Algorithms after all. I will also try to make pytests for these.
+
+My snake concept:
+- works in a game loop
+- it keeps moving in the same direction until another direction gets called by user or AI, like normal snake
+- takes in user input : Z=UP, S= DOWN, Q=LEFT, D=RIGHT
+- a simple AI that plays the game for you (Algorithm)
+- it is visualized by showing the coordinates of snake and the berry
+- when snake is on a berry, you get a point and the berry will spawn again at a random location
+- the playable area is for both X & Y 0-20, if you go outside that you die
+
+For the tests to works you have to put the game loop in comment, because the tests get stuck there.
