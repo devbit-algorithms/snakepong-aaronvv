@@ -1,0 +1,4 @@
+[
+  "test_snake.py::test_BerryRandom", 
+  "test_snake.py::test_SnakeMove"
+]
