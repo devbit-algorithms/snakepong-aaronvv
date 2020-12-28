@@ -1,4 +1,6 @@
 import random
+import msvcrt
+import time
 
 class Berry:
     def __init__(self):
@@ -68,20 +70,49 @@ class Snake:
 
 # OUTPUT
 
-#create berry object
+#berry object
 myBerry= Berry()
 
-#call methods on the berry object
+#random berry coordinates
 myBerry.randomCoordinates()
 myBerry.sayCoordinates()
 
-#create snake object
+#snake object
 mySnake= Snake()
 
-#call methods on the snake object
+#snake algorithm to go to berry
 mySnake.sayCoordinates()
-mySnake.AI(myBerry.getX(), myBerry.getY())
+#mySnake.AI(myBerry.getX(), myBerry.getY())
 
-mySnake.sayCoordinates()
+#mySnake.sayCoordinates()
+AI=True
+gameOver=False
+key="d"
+points=0
+print("z=up, s= down, q=left, d= right, x= quit")
+while gameOver==False:
+    if AI==True:
+        mySnake.AI(myBerry.getX(), myBerry.getY())
+    if msvcrt.kbhit():
+           key = msvcrt.getch()
+    
+    if key=="z" and AI==False:
+        mySnake.Up()
+    if key=="s" and AI==False:
+        mySnake.Down()
+    if key=="q" and AI==False:
+        mySnake.Left()
+    if key=="d" and AI==False:
+        mySnake.Right()
+    if key=="x":
+        gameOver=True
 
+    if myBerry.getX()==mySnake.getX() and mySnake.getY()==myBerry.getY():
+        points=points+1
+        myBerry.randomCoordinates()
+    myBerry.sayCoordinates()
+    mySnake.sayCoordinates()
+    
+    print("Points: "+str(points))
+    time.sleep(1)
 
