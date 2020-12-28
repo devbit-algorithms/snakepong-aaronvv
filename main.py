@@ -68,7 +68,7 @@ class Snake:
 
 
 
-# Gameloop
+# Game
 
 myBerry= Berry()
 myBerry.randomCoordinates()
@@ -82,14 +82,14 @@ points=0
 print("Welcome to snake concept, where snake is represented with X & Y coordinates.")
 print("Controlls:  z=up, s= down, q=left, d= right, x= quit")
 print("The playable area is between 0- 20, if you go outside, you die.")
-print("You can choose between AI ON or OFF, when AI is turned on, snake will play by itself and just go to destination.")
+print("You can choose between AI ON or OFF, when AI is turned on, snake will play by itself and just go to the berry.")
 x =raw_input("Please choose enter \"ON\" or \"OFF\": ")
 print(x)
 
 if x=="ON":
     AI=True
 
-
+#Gameloop
 while gameOver==False:
     if AI==True:
         mySnake.AI(myBerry.getX(), myBerry.getY())
