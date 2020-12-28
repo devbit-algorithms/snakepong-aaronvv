@@ -41,3 +41,10 @@ My snake concept:
 - has pytests for the random berry location, the snake movement and the AI
 
 For the tests to works you have to put the game loop in comment, because the tests get stuck there.
+
+## Used links
+
+- Keyboard input: (https://stackoverflow.com/questions/24072790/detect-key-press-in-python )
+- RNG: (https://www.w3schools.com/python/ref_random_randint.asp )
+- Fix for input error: (https://stackoverflow.com/questions/11844072/python-typeerror-cannot-concatenate-str-and-int-objects )
+- Course: (https://devbit-algorithms.netlify.app/#course-goals )
