@@ -1,6 +1,6 @@
 # SnakePong
 Snakepong is a mix between the old games "pong" & "snake", where the game is played like pong but one of the paddles of pong can be controlled like snake. 
-Since this is a task and not a replacement for the exam, I will only work on this for 1 day, I will not throw away the study days that I very much need.
+Since this is a task and not a replacement for the exam, I will only work on this for 1 day.
 
 ## Analysis of the problem
 It is a pretty complex game, using bounce physics on the ball, is also has 2 big moveable parts: the snake and the paddle. 
