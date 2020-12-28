@@ -23,22 +23,37 @@ def test_SnakeMove():
     x2Snake=mySnake.getX()
     y2Snake=mySnake.getY()
 
-    assert x2Snake==x1Snake-1 and y1Snake==y2Snake
+    assert x2Snake==x1Snake and y1Snake-1==y2Snake
 
     mySnake.Down()
     x3Snake=mySnake.getX()
     y3Snake=mySnake.getY()
 
-    assert x3Snake==x2Snake+1 and y2Snake==y3Snake 
+    assert x3Snake==x2Snake and y2Snake+1==y3Snake 
 
     mySnake.Left()
     x4Snake=mySnake.getX()
     y4Snake=mySnake.getY()
 
-    assert x3Snake==x4Snake and y4Snake==y3Snake -1
+    assert x3Snake-1==x4Snake and y4Snake==y3Snake
 
     mySnake.Right()
     x5Snake=mySnake.getX()
     y5Snake=mySnake.getY()
 
-    assert x4Snake==x5Snake and y5Snake==y4Snake +1 
+    assert x4Snake+1 ==x5Snake and y5Snake==y4Snake
+
+def test_AI():
+    myBerry= Berry()
+    myBerry.randomCoordinates()
+    
+    mySnake= Snake()
+  
+
+    mySnake.AI(myBerry.getX(), myBerry.getY())
+    xAISnake=mySnake.getX()
+    yAISnake=mySnake.getY()
+    xBerry= myBerry.getX()
+    yBerry= myBerry.getY()
+
+    assert xBerry==xAISnake and yBerry==yAISnake

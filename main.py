@@ -2,8 +2,8 @@ import random
 
 class Berry:
     def __init__(self):
-        self.x=0
-        self.y=0
+        self.x=12
+        self.y=17
 
     #random position berry
     def randomCoordinates(self):
@@ -21,8 +21,8 @@ class Berry:
 
 class Snake:
     def __init__(self):
-        self.x=0
-        self.y=0
+        self.x=15
+        self.y=15
     
     def getX(self):
         return self.x
@@ -33,17 +33,35 @@ class Snake:
     def sayCoordinates(self):
         print("Snake   X: "+str(self.getX())+ ", Y: "+str(self.getY()))
     
-    def Up(self):
+    def Left(self):
         self.x= self.x-1
 
-    def Down(self):
+    def Right(self):
         self.x= self.x+1
-        
-    def Left(self):
+    def Up(self):
         self.y= self.y-1
 
-    def Right(self):
+    def Down(self):
         self.y= self.y+1
+        
+    
+    
+    def AI(self,Xberry,Yberry):
+        
+        while not(self.getX()== Xberry and self.getY()==Yberry):
+            if self.getX()>Xberry:
+                self.Left()
+
+            if self.getX()<Xberry:
+                self.Right()
+
+            if self.getY()>Yberry:
+                self.Up()
+
+            if self.getY()<Yberry:
+                self.Down()
+            
+
     
 
 
@@ -62,7 +80,8 @@ mySnake= Snake()
 
 #call methods on the snake object
 mySnake.sayCoordinates()
-mySnake.Up()
+mySnake.AI(myBerry.getX(), myBerry.getY())
+
 mySnake.sayCoordinates()
 
 
